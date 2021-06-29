@@ -27,10 +27,10 @@ class SegmentCollectorTest extends TestCase
         $request = $this->createRequest();
         $request->expects($this->any())->method('path')->willReturn('normal/path');
 
-        // $segment = new SegmentCollector();
-        // $segment->initHttpTracer($request);
+        $segment = new SegmentCollector();
+        $segment->initHttpTracer($request);
 
-        // $this->assertTrue($segment->tracer()->isSampled());
+        $this->assertTrue($segment->tracer()->isSampled());
     }
 
     protected function createRequest(): MockObject
