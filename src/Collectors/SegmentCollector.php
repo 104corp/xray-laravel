@@ -103,7 +103,7 @@ class SegmentCollector
         return $segment;
     }
 
-    public function addHttpSegment(string $url, ?array $config = []): Segment
+    public function addHttpSegment(string $url, ?array $config = []): HttpSegment
     {
         $name = $config['name'] ?? $url;
         $method = $config['method'] ?? 'GET';

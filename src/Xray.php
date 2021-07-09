@@ -6,6 +6,7 @@ namespace Napp\Xray;
 
 use Illuminate\Http\Request;
 use Napp\Xray\Collectors\SegmentCollector;
+use Napp\Xray\Segments\HttpSegment;
 use Pkerrigan\Xray\Segment;
 use Pkerrigan\Xray\Trace;
 
@@ -59,7 +60,7 @@ class Xray
      * @param array|null $config
      * @return Segment
      */
-    public function addHttpSegment(string $url, ?array $config = []): Segment
+    public function addHttpSegment(string $url, ?array $config = []): HttpSegment
     {
         return $this->collector->addHttpSegment($url, $config);
     }

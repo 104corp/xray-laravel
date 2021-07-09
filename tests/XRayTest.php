@@ -25,7 +25,7 @@ class XrayTest extends TestCase
         $collector->expects($this->once())->method('addCustomSegment')->with($segment, 'name');
         $collector->expects($this->once())->method('addHttpSegment')->with('url', []);
         $collector->expects($this->once())->method('getSegment')->with('name');
-        $collector->expects($this->once())->method('endHttpSegment')->with('name');
+        $collector->expects($this->once())->method('endSegment')->with('name');
         $collector->expects($this->once())->method('hasAddedSegment')->with('name');
         $collector->expects($this->once())->method('endCurrentSegment');
 
