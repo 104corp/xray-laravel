@@ -74,18 +74,6 @@ class Xray
         $this->collector->endSegment($name);
     }
 
-    /**
-     * End HTTP segment by segment name
-     *
-     * @param string $name
-     * @param integer|null $responseCode = 200
-     * @return void
-     */
-    public function endHttpSegment(string $name, ?int $responseCode = 200): void
-    {
-        $this->collector->endHttpSegment($name, $responseCode);
-    }
-
     public function hasAddedSegment(string $name): bool
     {
         return $this->collector->hasAddedSegment($name);

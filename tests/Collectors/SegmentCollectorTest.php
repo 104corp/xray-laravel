@@ -43,7 +43,7 @@ class SegmentCollectorTest extends TestCase
         $this->assertEquals('POST', $data['http']['request']['method']);
         $this->assertEquals('http://example.com', $data['http']['request']['url']);
 
-        $collector->endHttpSegment('example', 400);
+        $collector->endSegment('example');
 
         $this->assertNull($collector->getSegment('example'));
 
@@ -51,11 +51,17 @@ class SegmentCollectorTest extends TestCase
         $this->assertEquals(400, $data['http']['response']['status']);
     }
 
+    public function test_end_empty_segments_wont_throw_exception()
+    {
+        $collector = new SegmentCollector();
+        $collector->endSegment('some-segment');
+
+        $this->assertTrue(true);
+    }
+
     protected function createRequest(): MockObject
     {
-        $request = $this->getMockBuilder(Request::class)
-            ->setMethods(['ip', 'url', 'method', 'path'])
-            ->getMock();
+        $request = $this->getMockBuilder(Request::class)->getMock();
 
         $request->expects($this->any())->method('ip')->willReturn('some-ip');
         $request->expects($this->any())->method('url')->willReturn('some-url');
