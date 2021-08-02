@@ -58,7 +58,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Enable Database Query Bindings
+    | Erase Database Query Value
     |--------------------------------------------------------------------------
     */
     'db_erase_query' => env('AWS_XRAY_ERASE_DB_QUERY_VALUE', false),
