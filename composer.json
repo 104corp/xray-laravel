@@ -11,7 +11,7 @@
     "require": {
         "ext-json": "*",
         "php": "^8.0",
-        "laravel/framework": "^6.0|^7.0|^8.0|^9.0",
+        "laravel/framework": "^6.0|^7.0|^8.0|^9.0|^10.0",
         "pkerrigan/xray": "^1.4",
         "aws/aws-sdk-php": "^3.133"
     },
